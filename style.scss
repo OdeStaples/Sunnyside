@@ -1,0 +1,572 @@
+// Variables and mixins
+@import "./variables", "./mixins";
+
+// Global Styles
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+
+  body {
+    font-size: 1.8rem;
+    color: orangered;
+  }
+}
+
+// Wrapper Styles
+.wrapper {
+  display: grid;
+  grid-template:
+    "header"
+    "main"
+    "footer"
+    / auto;
+}
+
+// Header Styles
+header {
+  grid-area: "header";
+  font-family: $font-primary;
+  display: grid;
+  grid-template:
+    "g-header"
+    "g-hero" 80rem
+    / auto;
+
+  background: url("./images/desktop/image-header.jpg") no-repeat top;
+  background-size: cover;
+
+  @include phone {
+    background: url("./images/mobile/image-header.jpg") no-repeat top;
+    background-size: cover;
+  }
+
+  .header {
+    grid-area: "g-header";
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    
+
+    @include flex {
+      align-items: center;
+
+      .toggler,
+      .hamburger {
+        display: none;
+      }
+
+      .logo {
+        margin-right: auto;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      nav {
+        a {
+          display: inline-block;
+          text-decoration: none;
+          color: $white;
+          font-weight: 200;
+          padding: 1.3rem;
+          font-size: 1.8rem;
+          margin: 0 0.5rem;
+
+          &:not(:last-of-type):hover {
+            color: orangered;
+          }
+
+          &.checked {
+            text-align: center;
+            color: black;
+            font-family: $font-secondary;
+            font-weight: 700;
+            background: $yellow;
+            border-radius: 2.5rem;
+
+            &:hover {
+              background-color: cadetblue;
+            }
+          }
+        }
+      }
+
+      @include phone {
+        nav {
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          top: 100%;
+          right: 5%;
+          padding: 1rem 0;
+          background-color: $white;
+          clip-path: polygon(0% 10%, 90% 10%, 100% 0%, 100% 100%, 0% 100%);
+
+          @include flex {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+
+          a {
+            color: $grayish-blue-dark-v;
+            text-align: center;
+            font-size: 1.8rem;
+
+            &.checked {
+              margin-top: 1rem;
+            }
+          }
+        }
+
+        .toggler,
+        .hamburger {
+          display: block;
+          cursor: pointer;
+        }
+
+        .logo {
+          padding-top: 0.8rem;
+        }
+
+        .toggler {
+          position: absolute;
+          height: 3rem;
+          width: 3rem;
+          right: 2rem;
+          opacity: 0;
+          z-index: 2;
+
+          &:checked ~ .hamburger {
+            background: transparent;
+          }
+          &:checked ~ .hamburger:before {
+            transform: rotateZ(45deg);
+          }
+          &:checked ~ .hamburger:after {
+            transform: rotateZ(-45deg);
+          }
+          &:checked + nav {
+            visibility: visible;
+            height: 30rem;
+            width: 90%;
+            opacity: 1;
+          }
+        }
+
+        .hamburger {
+          position: relative;
+          width: 3rem;
+          height: 0.3rem;
+          background-color: $white;
+
+          &::after,
+          &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            background-color: $white;
+            transition: all 0.25s ease-in-out;
+          }
+
+          &::before {
+            transform: translateY(-1rem);
+          }
+          &::after {
+            transform: translateY(1rem);
+          }
+        }
+      }
+    }
+  }
+
+  .hero {
+    grid-area: "g-hero";
+    background-image: url("./images/desktop/image-header.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .hero-title {
+      padding: 5rem 1rem 0;
+      width: 80%;
+      margin: 0 auto;
+      @include flex {
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    h1 {
+      font-family: $font-secondary;
+      font-weight: 900;
+      color: $white;
+      text-align: center;
+      letter-spacing: 0.5rem;
+
+      @include phone {
+        font-weight: 700;
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+    }
+
+    @include phone {
+      .hero-title {
+        margin-top: 8rem;
+      }
+      img {
+        left: 45%;
+        top: 42%;
+      }
+    }
+  }
+}
+
+// Main Styles
+main {
+  grid-area: "main";
+  display: grid;
+  grid-template:
+    "about"
+    "services"
+    "contact"
+    / auto;
+
+  // About Section
+  #about {
+    grid-area: "about";
+    display: grid;
+
+    grid-template:
+      "content-1 card-1"
+      "card-2 content-2"
+      "content-3 content-4"
+      / auto auto;
+    color: black;
+
+    @include phone {
+      grid-template:
+        "card-1" 40rem
+        "content-1"
+        "card-2" 40rem
+        "content-2"
+        "content-3"
+        "content-4"
+        / auto;
+    }
+
+    .learn {
+      position: relative;
+      z-index: 1;
+
+      @include flex {
+      }
+
+      &:hover {
+        &::after {
+          background: $yellow;
+        }
+      }
+
+      &::after {
+        height: 0.8rem;
+        width: 12ch;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        background: lighten($yellow, 30%);
+      }
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      font-family: $font-secondary;
+      font-weight: 900;
+    }
+
+    div[class*="card-content-"] {
+      background-color: $white;
+      padding: 15rem 2rem;
+      width: 100%;
+      text-align: center;
+
+      @include flex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h3 {
+        font-family: $font-secondary;
+        font-weight: 900;
+        font-size: 3rem;
+      }
+      p {
+        padding: 5rem 0;
+        font-family: $font-primary;
+        color: $grayish-blue-dark;
+        font-weight: 600;
+      }
+    }
+
+    .card-content-1 {
+      grid-area: "content-1";
+
+      @include phone {
+        order: 2;
+      }
+    }
+    .card-img-1 {
+      grid-area: "card-1";
+      background: url("./images/desktop/image-transform.jpg") no-repeat center;
+      background-size: cover;
+      width: 100%;
+
+      @include phone {
+        background: url("./images/mobile/image-transform.jpg") no-repeat center;
+        background-size: cover;
+        order: 1;
+      }
+    }
+    .card-img-2 {
+      grid-area: "card-2";
+      background-size: cover;
+      background: url("./images/desktop/image-stand-out.jpg") no-repeat center;
+      width: 100%;
+
+      @include phone {
+        background-size: cover;
+        background: url("./images/mobile/image-stand-out.jpg") no-repeat center;
+        order: 3;
+      }
+    }
+    .card-content-2 {
+      grid-area: "content-2";
+
+      @include phone {
+        order: 4;
+      }
+    }
+
+    .service-content-3 {
+      grid-area: "content-3";
+      background: url("./images/desktop/image-graphic-design.jpg");
+
+      @include phone {
+        background-image: url("./images/mobile/image-graphic-design.jpg");
+        order: 5;
+      }
+    }
+    div[class*="service-content-"] {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+
+      div[class*="content-text"] {
+        margin: 50rem 2rem 0rem;
+        position: relative;
+        bottom: 8rem;
+
+        h2 {
+          font-family: $font-secondary;
+          font-weight: 900;
+          color: $dd-cyan;
+          text-align: center;
+          padding-bottom: 2rem;
+          font-size: 3.5rem;
+        }
+
+        p {
+          font-family: $font-primary;
+          color: $grayish-blue-dark-v;
+          text-align: center;
+        }
+      }
+    }
+    .service-content-4 {
+      grid-area: "content-4";
+      background: url("./images/desktop/image-photography.jpg");
+
+      @include phone {
+        background-image: url("./images/mobile/image-photography.jpg");
+        order: 6;
+      }
+    }
+  }
+
+  // Services Section
+  #services {
+    grid-area: "services";
+    @include flex {
+      flex-direction: column;
+    }
+
+    h2 {
+      padding: 5rem 0;
+      text-align: center;
+      color: $grayish-blue;
+      font-family: $font-secondary;
+      letter-spacing: 0.5rem;
+
+      @include phone {
+        font-size: 2.5rem;
+      }
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template:
+        "test-1 test-2 test-3"
+        / auto auto auto;
+
+      @include phone {
+        grid-template:
+          "test-1"
+          "test-2"
+          "test-3"
+          / auto;
+      }
+
+      div[class*="testimonial-"] {
+        @include flex {
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 2rem;
+        }
+
+        div[class*="testimonial-img"] {
+          img {
+            border-radius: 50%;
+            max-width: 9rem;
+          }
+        }
+        div[class*="testimonial-content"] {
+          padding: 0 2rem;
+          p {
+            color: $grayish-blue-dark-v;
+            font-family: $font-primary;
+            font-weight: 600;
+            text-align: center;
+            padding: 2rem;
+          }
+          h3 {
+            color: black;
+            font-family: $font-secondary;
+            margin: 1.5rem 0 1rem;
+            font-size: 2rem;
+          }
+          h4 {
+            color: $grayish-blue-dark;
+          }
+        }
+      }
+      .testimonial-1 {
+        grid-area: "test-1";
+      }
+      .testimonial-2 {
+        grid-area: "test-2";
+      }
+      .testimonial-3 {
+        grid-area: "test-3";
+      }
+    }
+  }
+
+  // Projects Styles
+  #projects {
+    grid-area: "projects";
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+
+    @include phone{
+      grid-template-columns: repeat(2, 50%);
+    }
+    div[class*="img-"]{
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// Footer Styles
+#footer{
+  grid-area: "footer";
+  background: lighten($dm-cyan, 20%);
+  width: 100%;
+
+  .container{
+    width: 60%;
+    margin: 0 auto;
+
+    @include phone{
+      width: 100%;
+    }
+
+    @include flex{
+      flex-direction: column;
+    }
+    .logo{
+      flex: 1 1 100%;
+      text-align: center;
+      margin: 5rem 0 3rem;
+      
+    }
+    .menu{
+      flex: 1 1 60%;
+      margin-bottom: 6rem;
+      @include flex{
+        align-items: center;
+        justify-content: center;
+      }
+      a{
+        padding: 1rem;
+        text-decoration: none;
+        font-family: $font-primary;
+        font-size: 1.8rem;
+        color: $dm-cyan;
+
+        &:hover{
+          color: $white;
+        }
+      }
+    }
+
+    .links{
+      text-align: center;
+
+      img{
+        margin: 0 2rem 5rem;
+      }
+    }
+  }
+}
