@@ -32,13 +32,13 @@ header {
   display: -ms-grid;
   display: grid;
   grid-template: "g-header" "g-hero" 80rem / auto;
-  background: url("./images/desktop/image-header.jpg") no-repeat top;
+  background: url("../images/desktop/image-header.jpg") no-repeat top;
   background-size: cover;
 }
 
 @media screen and (max-width: 576px) {
   header {
-    background: url("./images/mobile/image-header.jpg") no-repeat top;
+    background: url("../images/mobile/image-header.jpg") no-repeat top;
     background-size: cover;
   }
 }
@@ -191,7 +191,7 @@ header .header nav a.checked:hover {
 
 header .hero {
   grid-area: "g-hero";
-  background-image: url("./images/desktop/image-header.jpg");
+  background-image: url("../images/desktop/image-header.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -347,14 +347,14 @@ main #about .card-content-1 {
 
 main #about .card-img-1 {
   grid-area: "card-1";
-  background: url("./images/desktop/image-transform.jpg") no-repeat center;
+  background: url("../images/desktop/image-transform.jpg") no-repeat center;
   background-size: cover;
   width: 100%;
 }
 
 @media screen and (max-width: 576px) {
   main #about .card-img-1 {
-    background: url("./images/mobile/image-transform.jpg") no-repeat center;
+    background: url("../images/mobile/image-transform.jpg") no-repeat center;
     background-size: cover;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -365,14 +365,14 @@ main #about .card-img-1 {
 main #about .card-img-2 {
   grid-area: "card-2";
   background-size: cover;
-  background: url("./images/desktop/image-stand-out.jpg") no-repeat center;
+  background: url("../images/desktop/image-stand-out.jpg") no-repeat center;
   width: 100%;
 }
 
 @media screen and (max-width: 576px) {
   main #about .card-img-2 {
     background-size: cover;
-    background: url("./images/mobile/image-stand-out.jpg") no-repeat center;
+    background: url("../images/mobile/image-stand-out.jpg") no-repeat center;
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
@@ -393,12 +393,12 @@ main #about .card-content-2 {
 
 main #about .service-content-3 {
   grid-area: "content-3";
-  background: url("./images/desktop/image-graphic-design.jpg");
+  background: url("../images/desktop/image-graphic-design.jpg");
 }
 
 @media screen and (max-width: 576px) {
   main #about .service-content-3 {
-    background-image: url("./images/mobile/image-graphic-design.jpg");
+    background-image: url("../images/mobile/image-graphic-design.jpg");
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
@@ -435,19 +435,19 @@ main #about div[class*="service-content-"] div[class*="content-text"] p {
 
 main #about .service-content-4 {
   grid-area: "content-4";
-  background: url("./images/desktop/image-photography.jpg");
+  background: url("../images/desktop/image-photography.jpg");
 }
 
 @media screen and (max-width: 576px) {
   main #about .service-content-4 {
-    background-image: url("./images/mobile/image-photography.jpg");
+    background-image: url("../images/mobile/image-photography.jpg");
     -webkit-box-ordinal-group: 7;
         -ms-flex-order: 6;
             order: 6;
   }
 }
 
-main #services {
+main .services {
   grid-area: "services";
   display: -webkit-box;
   display: -ms-flexbox;
@@ -458,7 +458,7 @@ main #services {
           flex-direction: column;
 }
 
-main #services h2 {
+main .services h2 {
   padding: 5rem 0;
   text-align: center;
   color: #a7abae;
@@ -467,24 +467,24 @@ main #services h2 {
 }
 
 @media screen and (max-width: 576px) {
-  main #services h2 {
+  main .services h2 {
     font-size: 2.5rem;
   }
 }
 
-main #services .testimonials {
+main .services .testimonials {
   display: -ms-grid;
   display: grid;
   grid-template: "test-1 test-2 test-3" / auto auto auto;
 }
 
 @media screen and (max-width: 576px) {
-  main #services .testimonials {
+  main .services .testimonials {
     grid-template: "test-1" "test-2" "test-3" / auto;
   }
 }
 
-main #services .testimonials div[class*="testimonial-"] {
+main .services .testimonials div[class*="testimonial-"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -498,16 +498,16 @@ main #services .testimonials div[class*="testimonial-"] {
   margin-bottom: 2rem;
 }
 
-main #services .testimonials div[class*="testimonial-"] div[class*="testimonial-img"] img {
+main .services .testimonials div[class*="testimonial-"] div[class*="testimonial-img"] img {
   border-radius: 50%;
   max-width: 9rem;
 }
 
-main #services .testimonials div[class*="testimonial-"] div[class*="testimonial-content"] {
+main .services .testimonials div[class*="testimonial-"] div[class*="testimonial-content"] {
   padding: 0 2rem;
 }
 
-main #services .testimonials div[class*="testimonial-"] div[class*="testimonial-content"] p {
+main .services .testimonials div[class*="testimonial-"] div[class*="testimonial-content"] p {
   color: #5a636c;
   font-family: "Barlow", sans-serif;
   font-weight: 600;
@@ -515,26 +515,26 @@ main #services .testimonials div[class*="testimonial-"] div[class*="testimonial-
   padding: 2rem;
 }
 
-main #services .testimonials div[class*="testimonial-"] div[class*="testimonial-content"] h3 {
+main .services .testimonials div[class*="testimonial-"] div[class*="testimonial-content"] h3 {
   color: black;
   font-family: "Fraunces", serif;
   margin: 1.5rem 0 1rem;
   font-size: 2rem;
 }
 
-main #services .testimonials div[class*="testimonial-"] div[class*="testimonial-content"] h4 {
+main .services .testimonials div[class*="testimonial-"] div[class*="testimonial-content"] h4 {
   color: #818498;
 }
 
-main #services .testimonials .testimonial-1 {
+main .services .testimonials .testimonial-1 {
   grid-area: "test-1";
 }
 
-main #services .testimonials .testimonial-2 {
+main .services .testimonials .testimonial-2 {
   grid-area: "test-2";
 }
 
-main #services .testimonials .testimonial-3 {
+main .services .testimonials .testimonial-3 {
   grid-area: "test-3";
 }
 
