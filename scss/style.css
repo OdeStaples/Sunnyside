@@ -36,7 +36,7 @@ header {
   background-size: cover;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   header {
     background: url("../images/mobile/image-header.jpg") no-repeat top;
     background-size: cover;
@@ -75,7 +75,7 @@ header .header nav a {
   text-decoration: none;
   color: white;
   font-weight: 200;
-  padding: 1.3rem;
+  padding: 1.3rem 2.5rem;
   font-size: 1.8rem;
   margin: 0 0.5rem;
 }
@@ -97,7 +97,7 @@ header .header nav a.checked:hover {
   background-color: cadetblue;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   header .header nav {
     visibility: hidden;
     opacity: 0;
@@ -223,7 +223,7 @@ header .hero h1 {
   letter-spacing: 0.5rem;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   header .hero h1 {
     font-weight: 700;
     font-size: 3rem;
@@ -237,7 +237,7 @@ header .hero img {
   top: 30%;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   header .hero .hero-title {
     margin-top: 8rem;
   }
@@ -262,7 +262,7 @@ main #about {
   color: black;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main #about {
     grid-template: "card-1" 40rem "content-1" "card-2" 40rem "content-2" "content-3" "content-4" / auto;
   }
@@ -337,7 +337,7 @@ main #about .card-content-1 {
   grid-area: "content-1";
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main #about .card-content-1 {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -352,7 +352,7 @@ main #about .card-img-1 {
   width: 100%;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main #about .card-img-1 {
     background: url("../images/mobile/image-transform.jpg") no-repeat center;
     background-size: cover;
@@ -369,7 +369,7 @@ main #about .card-img-2 {
   width: 100%;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main #about .card-img-2 {
     background-size: cover;
     background: url("../images/mobile/image-stand-out.jpg") no-repeat center;
@@ -383,7 +383,7 @@ main #about .card-content-2 {
   grid-area: "content-2";
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main #about .card-content-2 {
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
@@ -396,7 +396,7 @@ main #about .service-content-3 {
   background: url("../images/desktop/image-graphic-design.jpg");
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main #about .service-content-3 {
     background-image: url("../images/mobile/image-graphic-design.jpg");
     -webkit-box-ordinal-group: 6;
@@ -438,7 +438,7 @@ main #about .service-content-4 {
   background: url("../images/desktop/image-photography.jpg");
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main #about .service-content-4 {
     background-image: url("../images/mobile/image-photography.jpg");
     -webkit-box-ordinal-group: 7;
@@ -466,7 +466,7 @@ main .services h2 {
   letter-spacing: 0.5rem;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main .services h2 {
     font-size: 2.5rem;
   }
@@ -478,7 +478,7 @@ main .services .testimonials {
   grid-template: "test-1 test-2 test-3" / auto auto auto;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main .services .testimonials {
     grid-template: "test-1" "test-2" "test-3" / auto;
   }
@@ -546,7 +546,7 @@ main #projects {
       grid-template-columns: repeat(4, 25%);
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   main #projects {
     -ms-grid-columns: (50%)[2];
         grid-template-columns: repeat(2, 50%);
@@ -578,7 +578,7 @@ main #projects div[class*="img-"] img {
           flex-direction: column;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 550px) {
   #footer .container {
     width: 100%;
   }
