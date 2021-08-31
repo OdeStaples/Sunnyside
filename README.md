@@ -27,10 +27,10 @@ Users should be able to:
 
 ![](./Screenshot.png)
 
-###Links
+### Links
 
-[Solution URL](https://github.com/OdeStaples/Sunnyside)
-[Live Site URL](https://odestaples.github.io/Sunnyside/)
+- [Solution URL](https://github.com/OdeStaples/Sunnyside)
+- [Live Site URL](https://odestaples.github.io/Sunnyside/)
 
 ## My process
 
