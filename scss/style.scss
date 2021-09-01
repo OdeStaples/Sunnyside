@@ -11,8 +11,6 @@
 html {
   scroll-behavior:smooth;
   font-size: 62.5%;
-  height: 100%;
-  width: 100%;
 
   body {
     font-size: 1.8rem;
@@ -32,7 +30,7 @@ html {
 
 // Header Styles
 header {
-  grid-area: "header";
+  grid-area: header;
   font-family: $font-primary;
   display: grid;
   grid-template:
@@ -52,7 +50,6 @@ header {
     grid-area: "g-header";
     padding: 2rem;
     position: relative;
-    width: 100%;
     z-index: 2;
     
 
@@ -192,7 +189,7 @@ header {
   }
 
   .hero {
-    grid-area: "g-hero";
+    grid-area: g-hero;
     background-image: url("../images/desktop/image-header.jpg");
     background-position: top;
     background-repeat: no-repeat;
@@ -244,17 +241,17 @@ header {
 
 // Main Styles
 main {
-  grid-area: "main";
+  grid-area: main;
   display: grid;
   grid-template:
     "about"
     "services"
-    "contact"
+    "projects"
     / auto;
 
   // About Section
   #about {
-    grid-area: "about";
+    grid-area: about;
     display: grid;
 
     grid-template:
@@ -312,7 +309,6 @@ main {
     div[class*="card-content-"] {
       background-color: $white;
       padding: 15rem 2rem;
-      width: 100%;
       text-align: center;
 
       @include flex {
@@ -335,14 +331,14 @@ main {
     }
 
     .card-content-1 {
-      grid-area: "content-1";
+      grid-area: content-1;
 
       @include phone {
         order: 2;
       }
     }
     .card-img-1 {
-      grid-area: "card-1";
+      grid-area: card-1;
       background: url("../images/desktop/image-transform.jpg") no-repeat center;
       background-size: cover;
       width: 100%;
@@ -354,7 +350,7 @@ main {
       }
     }
     .card-img-2 {
-      grid-area: "card-2";
+      grid-area: card-2;
       background-size: cover;
       background: url("../images/desktop/image-stand-out.jpg") no-repeat center;
       width: 100%;
@@ -366,7 +362,7 @@ main {
       }
     }
     .card-content-2 {
-      grid-area: "content-2";
+      grid-area: content-2;
 
       @include phone {
         order: 4;
@@ -374,7 +370,7 @@ main {
     }
 
     .service-content-3 {
-      grid-area: "content-3";
+      grid-area: content-3;
       background: url("../images/desktop/image-graphic-design.jpg");
 
       @include phone {
@@ -386,7 +382,6 @@ main {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      width: 100%;
 
       div[class*="content-text"] {
         margin: 50rem 2rem 0rem;
@@ -410,7 +405,7 @@ main {
       }
     }
     .service-content-4 {
-      grid-area: "content-4";
+      grid-area: content-4;
       background: url("../images/desktop/image-photography.jpg");
 
       @include phone {
@@ -422,7 +417,7 @@ main {
 
   // Services Section
   .services {
-    grid-area: "services";
+    grid-area: services;
     @include flex {
       flex-direction: column;
     }
@@ -487,32 +482,31 @@ main {
         }
       }
       .testimonial-1 {
-        grid-area: "test-1";
+        grid-area: test-1;
       }
       .testimonial-2 {
-        grid-area: "test-2";
+        grid-area: test-2;
       }
       .testimonial-3 {
-        grid-area: "test-3";
+        grid-area: test-3;
       }
     }
   }
 
   // Projects Styles
-  #projects {
-    grid-area: "projects";
+  #projects{
+    grid-area: projects;
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 1fr);
 
     @include phone{
-      grid-template-columns: repeat(2, 50%);
+      grid-template-columns: repeat(2, 1fr);
     }
-    div[class*="img-"]{
 
+    div[class*="img-"]{
       img{
         width: 100%;
         height: 100%;
-        object-fit: cover;
       }
     }
   }
@@ -520,7 +514,7 @@ main {
 
 // Footer Styles
 #footer{
-  grid-area: "footer";
+  grid-area: footer;
   background: lighten($dm-cyan, 20%);
   width: 100%;
 
