@@ -1,8 +1,8 @@
-#About
+# About
 
 This is my attempt at [Sunnyside Agency Landing Page Challenge on Frontend Mentors](https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef). Frontend Mentors help you hone your front-end skills and is a great asset for all aspiring web developers.
 
-##Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
